@@ -1,7 +1,7 @@
 def mvnHome
 def remote = [:]
     	remote.name = 'deploy'
-    	remote.host = '192.168.33.15'
+    	remote.host = '192.168.33.10'
     	remote.user = 'root'
     	remote.password = 'vagrant'
     	remote.allowAnyHosts = true
@@ -16,10 +16,10 @@ pipeline {
 		        label 'master'
 		    }
 		    steps {
-			    git 'https://github.com/venkat09docs/Maven-Java-Project.git'
+			    git 'https://github.com/Janardhan155/Maven-Java-Project.git'
 			    stash 'Source'
 			    script{
-			        mvnHome = tool 'LocalMaven'
+			        mvnHome = tool 'maven3.6'
 			    }
 		    }
 		}
